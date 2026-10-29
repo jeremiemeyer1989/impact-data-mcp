@@ -84,9 +84,10 @@ That script needs `ANTHROPIC_API_KEY`. It rebuilds clusters only for sectors tha
 ## Deploy on Vercel
 
 1. In Vercel, create a project and import this GitHub repository.
-2. Leave the framework as Next.js. The build command is `npm run build`.
-3. Add the same environment variables as in `.env.local`.
-4. Deploy.
+2. The framework must be Next.js. `vercel.json` sets that. The build command is `npm run build`.
+3. Leave Output Directory empty. Do not set it to `public`. Next.js does not write the site into a `public` folder, and Vercel will fail the deploy if it looks for one.
+4. Add the same environment variables as in `.env.local`.
+5. Deploy.
 
 The endpoint is `https://<project>.vercel.app/api/mcp`.
 
